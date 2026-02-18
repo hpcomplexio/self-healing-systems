@@ -1,0 +1,9 @@
+services:
+  app:
+    image: ${APP_IMAGE:-self-healing-lab/app}:${IMAGE_TAG:-current}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: self-healing-app
+    ports:
+      - "8000:8000"
