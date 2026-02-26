@@ -15,6 +15,8 @@ Use this file to store important links and notes.
 - https://arxiv.org/html/2512.24601v1
 - https://en.wikipedia.org/wiki/G%C3%B6del_machine
 - https://www.amplifypartners.com/blog-posts/how-hightouch-built-their-long-running-agent-harness
+- https://github.com/vfarcic/vfarcic.github.io/blob/master/self-healing/self-healing-systems.md
+- https://github.com/ShanKonduru/AutoVsSelfHealing
 
 ## Notes
 
