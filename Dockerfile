@@ -6,6 +6,7 @@ COPY pyproject.toml README.md ./
 COPY app ./app
 COPY healer ./healer
 COPY watchdog ./watchdog
+COPY webhook ./webhook
 
 RUN pip install --no-cache-dir -e .
 
