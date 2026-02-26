@@ -37,7 +37,7 @@ class EventReporter:
             "source": "self-healing-systems",
             "type": event_type,
             "severity": severity,
-            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "timestamp": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
             "correlationId": correlation_id,
             "payload": payload,
         }

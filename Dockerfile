@@ -7,6 +7,7 @@ COPY app ./app
 COPY healer ./healer
 COPY watchdog ./watchdog
 COPY webhook ./webhook
+COPY tests ./tests
 
 RUN pip install --no-cache-dir -e .
 
