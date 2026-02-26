@@ -1,0 +1,14 @@
+{
+  "id": "018f35a4-c6d2-7cb8-af5a-0a00f329c101",
+  "schemaVersion": "1.0.0",
+  "eventVersion": 1,
+  "source": "self-healing-systems",
+  "type": "heal.completed",
+  "severity": "info",
+  "timestamp": "2026-02-26T18:10:00Z",
+  "correlationId": "018f35a4-c6d2-7cb8-af5a-0a00f329c100",
+  "payload": {
+    "patchSummary": "Applied NONE_TYPE remediation.",
+    "changedFiles": ["app/logic.py"]
+  }
+}

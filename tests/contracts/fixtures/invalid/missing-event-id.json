@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0",
+  "eventVersion": 1,
+  "source": "self-healing-systems",
+  "type": "heal.attempted",
+  "severity": "info",
+  "timestamp": "2026-02-26T18:12:00Z",
+  "correlationId": "018f35a4-c6d2-7cb8-af5a-0a00f329c104",
+  "payload": {
+    "status": "started"
+  }
+}

@@ -5,6 +5,32 @@ Deterministic, local-first lab that demonstrates two recovery loops:
 - Code healing: inject a known bug, classify failure, apply a targeted fix, add regression coverage.
 - Runtime healing: simulate unhealthy service state, restart, then rollback to a known-good image if needed.
 
+## Integration Status (Round 1 Complete)
+
+Completed in this repo for tri-repo integration:
+- Added webhook reporting integration to Mission Control hub.
+- `/heal` enforces bearer auth (`SELF_HEALER_TOKEN`).
+- Reporter emits schema-compliant events to hub with idempotency key:
+- `heal.attempted`
+- `heal.completed`
+- `heal.escalated`
+- Runtime dependency fixes for containerized webhook path.
+- Docker image now includes required modules and tests for healer execution path.
+
+Validated gates:
+- Unauthorized `/heal` requests return `401`.
+- Known failure payload returns `200` with `status=completed`.
+- Unknown failure payload returns `200` with `status=escalated` + `reasonCode`.
+- Events can be accepted by Mission Control hub after timestamp normalization.
+
+## What Is Left For "Fully Done"
+
+- Add automated integration tests that run against a live Mission Control hub container.
+- Add stronger structured error reporting for failed patch application paths.
+- Add explicit health checks for reporter connectivity to hub.
+- Add CI job to run webhook + contract validation in containerized mode.
+- Expand deterministic failure library and corresponding fixer coverage.
+
 ## What This Repo Contains
 
 - `app/`: FastAPI service with health endpoints and a small compute function.
@@ -119,6 +145,12 @@ Then call:
 
 ```bash
 curl -fsS http://localhost:8000/healthz
+```
+
+## Contract Test Fixture Template
+
+```bash
+pytest tests/contracts/test_event_schema_contract.py
 ```
 
 ## Troubleshooting

@@ -1,0 +1,13 @@
+{
+  "id": "018f35a4-c6d2-7cb8-af5a-0a00f329c105",
+  "schemaVersion": "1.0.0",
+  "eventVersion": 1,
+  "source": "self-healing-systems",
+  "type": "heal.attempted",
+  "severity": "high",
+  "timestamp": "2026-02-26T18:13:00Z",
+  "correlationId": "018f35a4-c6d2-7cb8-af5a-0a00f329c106",
+  "payload": {
+    "status": "started"
+  }
+}
