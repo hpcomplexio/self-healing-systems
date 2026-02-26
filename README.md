@@ -153,6 +153,25 @@ curl -fsS http://localhost:8000/healthz
 pytest tests/contracts/test_event_schema_contract.py
 ```
 
+## Cross-Repo Handoff Notes
+
+When validating against Mission Control:
+- Hub URL from compose path: `http://agent-server:8787`
+- Local host URL (manual): `http://localhost:8787`
+- Required tokens must match between repos in dev compose:
+- `SELF_HEALER_TOKEN`
+- `MISSION_CONTROL_TOKEN`
+
+Expected outbound healer event types:
+- `heal.attempted`
+- `heal.completed`
+- `heal.escalated`
+
+If Mission Control rejects healer events (`400`):
+1. Check timestamp format compatibility (`...Z` expected by hub validator).
+2. Verify event envelope fields against `contracts/event-schema.json`.
+3. Verify `Idempotency-Key` and `Authorization` headers are present.
+
 ## Troubleshooting
 
 - `docker compose` not found:
